@@ -15,7 +15,22 @@ const skills = [
     return  skills.find(skill => skill.id === id);
   }
 
+  function create(skill){
+    skill.id = Date.now() % 1000000;
+    skill.versed = false;
+    skills.push(skill);
+  }
+
+  function deleteOne(id){
+    id = parseInt(id);
+    const idx = skills.findIndex(skill => skill.id === id);
+    skills.splice(idx,1);
+  }
+
+
   module.exports = {
     getAll,
-    getOne
+    getOne,
+    create,
+    deleteOne
   }

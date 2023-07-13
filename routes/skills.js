@@ -8,7 +8,15 @@ const skillsCtrl = require('../controller/skills');
 
 // Get/skills
 router.get('/', skillsCtrl.index);
+//GET/skills/new
+router.get('/new', skillsCtrl.new);
+
 router.get('/:id', skillsCtrl.show);
+// POST /todos
+router.post('/', skillsCtrl.create); 
+// DELETE/skills
+router.delete('/:id', skillsCtrl.delete);
+
 
 
 
